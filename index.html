@@ -4,17 +4,41 @@
     <meta charset="UTF-8" />
     <meta name="viewport" content="width=device-width, initial-scale=1.0" />
     <title>TV Show Project | Boualem Larbi Djebbour (djebsoft)</title>
-    <link href="style.css" rel="stylesheet" />
-    <link rel="icon" href="/favicon.ico" type="image/x-icon" />
+    <link rel="stylesheet" href="style.css" />
+    <link rel="icon" href="favicon.ico" type="image/x-icon" />
   </head>
 
   <body>
-    <div id="root"></div>
+    <h1>Welcome to the TV show episodes</h1>
+    <header id="header">
+      <h3 id="episode-count">loading episodes...</h3>
+    </header>
+
+    <label for="search-input">Search episodes:</label>
+    <input type="text" id="search-input" placeholder="Type to search..." />
+
+    <label for="episode-select">Jump to episode:</label>
+    <select id="episode-select">
+      <option value="">All Episodes</option>
+    </select>
+
+    <main id="root"></main>
+
+    <template id="episode-template">
+      <section class="episode-card">
+        <div class="episode-title"></div>
+        <img src="" alt="Episode image" />
+        <div class="episode-summary"></div>
+      </section>
+    </template>
+    <footer>
+      <h2>data sourced from <a href="https://tvmaze.com/">tvmaze.com</a></h2>
+    </footer>
 
     <!-- Loads a provided function called getAllEpisodes() which returns all episodes -->
     <script src="episodes.js"></script>
 
-    <!-- Loads YOUR javascript code -->
+    <!-- Loads my javascript code -->
     <script src="script.js"></script>
   </body>
 </html>
