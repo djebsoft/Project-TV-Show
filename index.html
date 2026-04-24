@@ -14,21 +14,53 @@
       <h3 id="episode-count">Preparing your show...</h3>
     </header>
 
-    <label for="show-select">Choose a show:</label>
-    <select id="show-select">
-      <option value="">Loading shows...</option>
-    </select>
+    <nav id="navigation-controls">
+      <button id="back-to-shows-btn" style="display: none">
+        ⬅ Back to Shows
+      </button>
+    </nav>
 
-    <label for="search-input">Search episodes:</label>
-    <input type="text" id="search-input" placeholder="Type to search..." />
+    <div id="controls">
+      <label for="show-select" class="episode-control">Choose a show:</label>
+      <select id="show-select" class="episode-control"></select>
 
-    <label for="episode-select">Jump to episode:</label>
-    <select id="episode-select">
-      <option value="">All Episodes</option>
-    </select>
+      <label for="search-input">Search:</label>
+      <input type="text" id="search-input" placeholder="Type to search..." />
+
+      <label for="episode-select" class="episode-control"
+        >Jump to episode:</label
+      >
+      <select id="episode-select" class="episode-control"></select>
+    </div>
 
     <main id="root"></main>
 
+    <template id="show-template">
+      <section class="show-card">
+        <h2 class="show-name"></h2>
+        <div class="show-content">
+          <img src="" alt="" class="show-image" />
+          <div class="show-details">
+            <p class="show-summary"></p>
+            <ul class="show-meta">
+              <li>
+                <strong>Genres:</strong> <span class="show-genres"></span>
+              </li>
+              <li>
+                <strong>Status:</strong> <span class="show-status"></span>
+              </li>
+              <li>
+                <strong>Rating:</strong> <span class="show-rating"></span>
+              </li>
+              <li>
+                <strong>Runtime:</strong>
+                <span class="show-runtime"></span> mins
+              </li>
+            </ul>
+          </div>
+        </div>
+      </section>
+    </template>
     <template id="episode-template">
       <section class="episode-card">
         <div class="episode-title"></div>
@@ -39,9 +71,6 @@
     <footer>
       <h2>data sourced from <a href="https://tvmaze.com/">tvmaze.com</a></h2>
     </footer>
-
-    <!-- Loads a provided function called getAllEpisodes() which returns all episodes -->
-    <script src="episodes.js"></script>
 
     <!-- Loads my javascript code -->
     <script src="script.js"></script>
